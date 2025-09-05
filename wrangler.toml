@@ -1,0 +1,16 @@
+# 📂 wrangler.toml
+
+name = "telegram-bot-worker"    # اسم پروژه
+main = "src/index.js"           # فایل ورودی ربات
+compatibility_date = "2025-08-31"  # تاریخ ثابت برای API Cloudflare
+compatibility_flags = ["nodejs_compat"] # فعال کردن سازگاری با بخشی از Node API
+
+[vars]
+BOT_TOKEN = "5744015922:AAEOER0SgfqZ2z_SdQ3PpiRNeU2-zfRSNXU"   # میشه از wrangler secret هم استفاده کرد
+CURRENCY_LIST = '["usdt","btc","bome"]'
+TELEGRAM_CHAT_ID = "1554012440"
+
+
+
+[triggers]
+crons = ["*/1 * * * *"]
