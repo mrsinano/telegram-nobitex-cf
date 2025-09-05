@@ -6,9 +6,9 @@ compatibility_date = "2025-08-31"  # تاریخ ثابت برای API Cloudflare
 compatibility_flags = ["nodejs_compat"] # فعال کردن سازگاری با بخشی از Node API
 
 [vars]
-BOT_TOKEN = "5744015922:AAEOER0SgfqZ2z_SdQ3PpiRNeU2-zfRSNXU"   # میشه از wrangler secret هم استفاده کرد
+BOT_TOKEN = "7420115590:AAHoGQZd5Lcb_oI3FTHomIQJHIsFNTZA2dM"   # میشه از wrangler secret هم استفاده کرد
 CURRENCY_LIST = '["usdt","btc","bome"]'
-TELEGRAM_CHAT_ID = "1554012440"
+TELEGRAM_CHAT_ID = "6295512279"
 
 
 
