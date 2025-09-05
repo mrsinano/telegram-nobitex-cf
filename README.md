@@ -121,12 +121,25 @@ crons = ["*/5 * * * *"]  # هر 5 دقیقه یکبار (قابل تغییر)
 ```bash
 # انتشار پروژه
 npx wrangler deploy
+```
 
-# تنظیم webhook برای ربات تلگرام
+### مرحله ۷: تنظیم webhook برای ربات تلگرام
+
+دو روش برای تنظیم webhook وجود دارد:
+
+#### روش ۱: استفاده از API تلگرام
+```bash
 curl -X POST "https://api.telegram.org/bot[BOT_TOKEN]/setWebhook" \
      -H "Content-Type: application/json" \
      -d '{"url": "https://my-crypto-tracker.[USERNAME].workers.dev/bot"}'
 ```
+
+#### روش ۲: استفاده از ابزار آنلاین
+برای راحتی بیشتر، می‌تونید از لینک زیر برای تنظیم webhook استفاده کنید:
+
+🔗 **[https://telegram.workers.mr-sinano.top/](https://telegram.workers.mr-sinano.top/)**
+
+این ابزار به شما کمک می‌کند webhook ربات تلگرام‌تون رو به راحتی تنظیم کنید.
 
 ---
 
@@ -188,10 +201,10 @@ CURRENCY_LIST = '["usdt","btc","eth","bnb","ada","dot","link","ltc"]'
 
 ```bash
 # تنظیم توکن به صورت مخفی
-wrangler secret put BOT_TOKEN
+npx wrangler secret put BOT_TOKEN
 
 # تنظیم Chat ID به صورت مخفی  
-wrangler secret put TELEGRAM_CHAT_ID
+npx wrangler secret put TELEGRAM_CHAT_ID
 ```
 
 ---
@@ -208,6 +221,8 @@ curl -X POST "https://api.telegram.org/bot[BOT_TOKEN]/setWebhook" \
      -d "url=https://your-worker.workers.dev/bot"
 ```
 
+یا از [ابزار آنلاین webhook](https://telegram.workers.mr-sinano.top/) استفاده کنید.
+
 ### ❌ خطای "Invalid token"
 - توکن ربات را از @BotFather دوباره دریافت کنید
 - مطمئن شوید توکن در `wrangler.toml` درست وارد شده
@@ -219,7 +234,7 @@ curl -X POST "https://api.telegram.org/bot[BOT_TOKEN]/setWebhook" \
 ### ❌ ربات پاسخ نمی‌دهد
 ```bash
 # بررسی logs
-wrangler tail
+npx wrangler tail
 
 # تست دستی webhook
 curl -X POST https://your-worker.workers.dev/bot \
