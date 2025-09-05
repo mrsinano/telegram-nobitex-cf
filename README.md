@@ -83,7 +83,7 @@
 npm install -g wrangler
 
 # لاگین به cloudflare
-wrangler login
+npx wrangler login
 ```
 
 ### مرحله ۴: دانلود و آماده‌سازی پروژه
@@ -116,24 +116,11 @@ TELEGRAM_CHAT_ID = "چت_آی_دی_شما"
 crons = ["*/5 * * * *"]  # هر 5 دقیقه یکبار (قابل تغییر)
 ```
 
-### مرحله ۶: اجرا و تست محلی
-
-```bash
-# اجرای محلی برای تست
-wrangler dev
-
-# تست API
-curl http://localhost:8787/nobitex
-
-# تست وب اپ
-# مرورگر: http://localhost:8787/web
-```
-
-### مرحله ۷: انتشار روی Cloudflare
+### مرحله ۶: انتشار روی Cloudflare
 
 ```bash
 # انتشار پروژه
-wrangler deploy
+npx wrangler deploy
 
 # تنظیم webhook برای ربات تلگرام
 curl -X POST "https://api.telegram.org/bot[BOT_TOKEN]/setWebhook" \
